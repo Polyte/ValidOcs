@@ -6,6 +6,8 @@ import { FaUpload, FaFileAlt, FaShieldAlt, FaCheckCircle, FaExclamationTriangle,
 import HealthIndicator from '@/components/HealthIndicator';
 import JsonViewer from '@/components/JsonViewer';
 import DataTable from '@/components/DataTable';
+import EnhancedDataTable from '@/components/EnhancedDataTable';
+import FraudAnalysisTable from '@/components/FraudAnalysisTable';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -16,6 +18,17 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
   const [isHealthy, setIsHealthy] = useState<boolean | null>(null);
   const [viewMode, setViewMode] = useState<'table' | 'json'>('table');
+
+  // Check if data is fraud analysis format
+  const isFraudAnalysisData = (data: any): boolean => {
+    if (!data || typeof data !== 'object') return false;
+    return (
+      'summary' in data ||
+      ('bank' in data && 'account_number' in data) ||
+      ('important_transactions' in data && Array.isArray(data.important_transactions)) ||
+      ('balance_difference' in data && 'calculated_closing' in data)
+    );
+  };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -177,7 +190,11 @@ export default function Home() {
                 </div>
               </div>
               {viewMode === 'table' ? (
-                <DataTable data={result} />
+                isFraudAnalysisData(result) ? (
+                  <FraudAnalysisTable data={result} />
+                ) : (
+                  <EnhancedDataTable data={result} itemsPerPage={10} />
+                )
               ) : (
                 <JsonViewer data={result} />
               )}

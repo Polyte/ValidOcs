@@ -28,6 +28,16 @@
 .jsonKey {
   color: #c792ea;
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.jsonKey::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
 }
 
 .jsonString {

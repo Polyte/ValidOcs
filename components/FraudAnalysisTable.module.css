@@ -1,0 +1,365 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Summary Card */
+.summaryCard {
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid;
+  animation: slideIn 0.5s ease-out;
+}
+
+.summaryCard.fraudulent {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
+  border-color: #ef4444;
+}
+
+.summaryCard.suspicious {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(217, 119, 6, 0.1) 100%);
+  border-color: #f59e0b;
+}
+
+.summaryCard.safe {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+  border-color: #10b981;
+}
+
+.summaryHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.summaryIcon {
+  font-size: 1.5rem;
+  color: #667eea;
+}
+
+.summaryTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  flex: 1;
+  font-family: 'Inter', sans-serif;
+}
+
+.summaryText {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+.fraudBadge,
+.suspiciousBadge,
+.safeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.fraudBadge {
+  background: #ef4444;
+  color: white;
+}
+
+.suspiciousBadge {
+  background: #f59e0b;
+  color: white;
+}
+
+.safeBadge {
+  background: #10b981;
+  color: white;
+}
+
+.scoreContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.scoreLabel {
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.scoreValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.scoreValue.highRisk {
+  background: rgba(239, 68, 68, 0.2);
+  color: #dc2626;
+}
+
+.scoreValue.mediumRisk {
+  background: rgba(245, 158, 11, 0.2);
+  color: #d97706;
+}
+
+.scoreValue.lowRisk {
+  background: rgba(16, 185, 129, 0.2);
+  color: #059669;
+}
+
+/* Section */
+.section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.sectionIcon {
+  font-size: 1.25rem;
+  color: #667eea;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  flex: 1;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Tables */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.transactionsTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.headerCell {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 8px 8px 0 0;
+}
+
+.labelCell {
+  padding: 1rem;
+  font-weight: 600;
+  color: #4b5563;
+  background: rgba(102, 126, 234, 0.05);
+  width: 40%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-right: 2px solid rgba(102, 126, 234, 0.1);
+}
+
+.valueCell {
+  padding: 1rem;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.cellIcon {
+  font-size: 1rem;
+  color: #667eea;
+  opacity: 0.8;
+}
+
+.currency {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.positive {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.negative {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.warning {
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+.positiveRow {
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.negativeRow {
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.warningRow {
+  background: rgba(245, 158, 11, 0.1);
+  border-left: 4px solid #f59e0b;
+}
+
+.na {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.hashValue {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  word-break: break-all;
+  color: #6b7280;
+}
+
+/* Transactions Table */
+.descriptionCell {
+  padding: 1rem;
+  color: #1a1a1a;
+  max-width: 400px;
+  word-wrap: break-word;
+}
+
+.directionCell {
+  padding: 1rem;
+  text-align: center;
+}
+
+.directionBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.directionBadge.in {
+  background: rgba(16, 185, 129, 0.2);
+  color: #059669;
+}
+
+.directionBadge.out {
+  background: rgba(239, 68, 68, 0.2);
+  color: #dc2626;
+}
+
+.warningBadge {
+  display: inline-block;
+  margin-left: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(245, 158, 11, 0.2);
+  color: #d97706;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Technical Details */
+.technicalToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(102, 126, 234, 0.05);
+  border: 2px dashed rgba(102, 126, 234, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  color: #667eea;
+  font-family: 'Inter', sans-serif;
+}
+
+.technicalToggle:hover {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: rgba(102, 126, 234, 0.5);
+}
+
+.exportSection {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 8px;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    gap: 1rem;
+  }
+
+  .section {
+    padding: 1rem;
+  }
+
+  .tableWrapper {
+    overflow-x: auto;
+  }
+
+  .labelCell {
+    width: 50%;
+    font-size: 0.9rem;
+  }
+
+  .valueCell {
+    font-size: 0.9rem;
+  }
+
+  .summaryHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+

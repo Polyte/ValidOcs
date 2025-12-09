@@ -1,6 +1,16 @@
 'use client';
 
 import { useMemo } from 'react';
+import { 
+  FaKey, 
+  FaQuoteLeft, 
+  FaHashtag, 
+  FaCheckCircle, 
+  FaTimesCircle,
+  FaDatabase,
+  FaBracketsCurly,
+  FaBracketsSquare
+} from 'react-icons/fa';
 import styles from './JsonViewer.module.css';
 
 interface JsonViewerProps {
