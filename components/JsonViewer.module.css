@@ -1,0 +1,71 @@
+.jsonContainer {
+  background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.jsonPre {
+  margin: 0;
+  padding: 1.5rem;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 600px;
+  font-family: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  background: transparent;
+}
+
+.jsonCode {
+  display: block;
+  white-space: pre;
+}
+
+.jsonKey {
+  color: #c792ea;
+  font-weight: 500;
+}
+
+.jsonString {
+  color: #c3e88d;
+}
+
+.jsonNumber {
+  color: #f78c6c;
+  font-weight: 500;
+}
+
+.jsonBoolean {
+  color: #82aaff;
+  font-weight: 500;
+}
+
+.jsonBracket {
+  color: #ffcb6b;
+  font-weight: 600;
+}
+
+/* Scrollbar styling */
+.jsonPre::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.jsonPre::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+}
+
+.jsonPre::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.jsonPre::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
